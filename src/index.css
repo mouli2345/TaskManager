@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+div > h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+div > p {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+/* Form Styles */
+.task-form {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.tns {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.tns input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.tns input:focus {
+  outline: none;
+  border-color: #66c2ea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.tns button {
+  padding: 12px 25px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.tns button:hover {
+  background: #5568d3;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.tns h2 {
+  display: none;
+}
+
+/* Select Styles */
+.btns {
+  display: flex;
+  gap: 10px;
+}
+
+.btns select {
+  flex: 1;
+  padding: 10px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  background: white;
+}
+
+.btns select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+/* Task List */
+.task-list {
+  list-style: none;
+  max-width: 500px;
+  width: 100%;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: white;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.task-list li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.task-list li span {
+  color: #333;
+  font-weight: 500;
+  flex: 1;
+}
+
+.task-list li small {
+  color: #999;
+  font-size: 0.85rem;
+  margin-left: 10px;
+}
+
+.task-list li button {
+  padding: 8px 12px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: 0.3s;
+}
+
+.task-list li button:first-child {
+  background: #10b981;
+  color: white;
+}
+
+.task-list li button:first-child:hover {
+  background: #059669;
+}
+
+.task-list li button:last-child {
+  background: #ef4444;
+  color: white;
+}
+
+.task-list li button:last-child:hover {
+  background: #dc2626;
+}
+
+/* Completed Task */
+.task-list li.completed {
+  opacity: 0.6;
+  background: #f9fafb;
+}
+
+.task-list li.completed span {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.task-list li.overdue {
+  border-left: 4px solid #ef4444;
+}
+
+.task-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.task-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: #555;
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.overdue-badge {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+.due-soon {
+  color: #92400e;
+  background: #fef3c7;
+}
+
+.due-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.due-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.progress-tracker {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress {
+  height: 100%;
+  background-color: rgb(69, 163, 69);
+  transition: width 0.3s ease;
+}
